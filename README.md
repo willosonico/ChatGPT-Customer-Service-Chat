@@ -1,4 +1,4 @@
-# ChatGPT customer service chat for website with a mysql db
+# ChatGPT customer service chat
 
 ## Setup
 
