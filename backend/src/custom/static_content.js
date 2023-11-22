@@ -18,6 +18,10 @@
 
     files has to be created in the backend/src/custom folder
 
+    also you need to populate the setup.txt file with something like this
+
+    "You are an ecommerce assistant focused only on replying questions about YOUR STORE NAME and user orders or music catalog or general conditions"
+
  */
 
 import * as fs from "fs";
