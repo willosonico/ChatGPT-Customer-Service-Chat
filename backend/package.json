@@ -5,19 +5,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
-    "watch": "npx nodemon --watch src --watch node_modules -e ts,js --exec node src",
+    "start": "npx ts-node ./src/index.ts",
+    "watch" : "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^3.0.1",
     "colors": "^1.4.0",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "openai": "^4.15.4",
+    "openai": "^4.20.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.4",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
   }
 }
