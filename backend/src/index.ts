@@ -1,4 +1,3 @@
-
 let express = require("express");
 const {queryChatGPT} = require("./lib/conversation");
 let app = express();
@@ -14,6 +13,14 @@ app.get("/", (req, res) => {
 
 // @ts-ignore
 app.get("/query", async (req, res) => {
-    let response = await queryChatGPT('ciao chatgpt')
-    res.json(response)
+    let message = req.query.message
+    console.log('querying', message)
+    if (message) {
+        let response = await queryChatGPT(message)
+        res.json({
+            'response' : response
+        })
+    } else {
+        res.status(500).json({'err': 'missing message'})
+    }
 })

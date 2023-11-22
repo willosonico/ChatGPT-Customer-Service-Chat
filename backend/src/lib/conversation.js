@@ -5,7 +5,7 @@ export async function queryChatGPT(message) {
     let user_message = [
         {
             "role": "user",
-            "content": message + ". Don’t justify your answers. Don’t give information not mentioned in the CONTEXT INFORMATION."
+            "content": message + ". Don’t justify your answers. Don’t give information not mentioned in the CONTEXT INFORMATION. Give short and fast answers."
         }
     ]
 
@@ -16,5 +16,5 @@ export async function queryChatGPT(message) {
         messages: messages,
     });
 
-    return response
+    return response.choices[0].message.content
 }
