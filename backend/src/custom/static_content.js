@@ -15,6 +15,9 @@
             'content': 'lorem ipsum dolor sit amet, consectetur adipiscing '
         }
     ]
+
+    files has to be created in the backend/src/custom folder
+
  */
 
 import * as fs from "fs";
