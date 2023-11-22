@@ -46,9 +46,7 @@ export function getStaticContent() {
             }
         }
         if (config.type === 'file') {
-            console.log(process.cwd())
             let pathToFile = 'src/custom/' + config.content
-            console.log(pathToFile)
             return {
                 "role": "system",
                 "content": fs.readFileSync(pathToFile).toString()
