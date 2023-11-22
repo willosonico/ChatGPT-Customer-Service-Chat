@@ -2,15 +2,11 @@
 
 ## Setup
 
-### Install docker for ubuntu
-
-    sudo bash scripts/01_install_docker.sh
-
-### Configure the environment
+Configure the environment by modifying .env.example
 
     copy .env.example .env
 
-### Start the backend
+Start the backend
 
     sudo bash scripts/03_start_backend.sh
 
