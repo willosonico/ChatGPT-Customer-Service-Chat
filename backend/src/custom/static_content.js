@@ -22,7 +22,7 @@ import * as fs from "fs";
 const setup = [
     {
         "role": "system",
-        "content": "You are an ecommerce assistant focused only on replying questions about discoteca laziale and user orders or music catalog or general conditions"
+        "content": fs.readFileSync('src/custom/setup.txt').toString()
     },
 ]
 

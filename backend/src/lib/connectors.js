@@ -16,8 +16,9 @@ let mysqlConnectionConfig = {
     password: process.env.MYSQL_PASS,
     database: process.env.MYSQL_DB
 }
+
 export var mysqlConn = mysql.createConnection(mysqlConnectionConfig);
 
-mysqlConn.connect(function(err) {
+/*mysqlConn.connect(function(err) {
     if (err) throw err;
-});
+});*/

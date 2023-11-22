@@ -10,7 +10,7 @@ services:
         max-file: "10"
     restart: always
     build:
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
       context: .
     networks:
       - chatgpt-customer-service-chat
