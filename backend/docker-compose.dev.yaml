@@ -1,0 +1,22 @@
+version: '3.3'
+networks:
+  chatgpt-customer-service-chat:
+services:
+  chatgpt-csc-backend:
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k" # Maximum log file size
+        max-file: "10"
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    networks:
+      - chatgpt-customer-service-chat
+    ports:
+      - "3307:3307"
+    env_file:
+      - ../.env
+    volumes:
+      - .:/app
