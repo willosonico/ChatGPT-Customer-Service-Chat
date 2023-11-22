@@ -1,0 +1,23 @@
+{
+  "name": "chatgtp-csc-backend",
+  "version": "1.0.0",
+  "author": "willosonico",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src",
+    "watch": "npx nodemon --watch src --watch node_modules -e ts,js --exec node src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "mysql": "^2.18.1",
+    "openai": "^4.15.4",
+    "readline-sync": "^1.4.10"
+  }
+}
