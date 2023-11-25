@@ -2,7 +2,7 @@ version: '3.3'
 networks:
   chatgpt-customer-service-chat:
 services:
-  chatgpt-csc-backend:
+  backend:
     logging:
       driver: json-file
       options:
@@ -10,13 +10,19 @@ services:
         max-file: "10"
     restart: always
     build:
-      dockerfile: dev.Dockerfile
-      context: .
+      dockerfile: Dockerfile
+      context: backend
     networks:
       - chatgpt-customer-service-chat
     ports:
       - "3307:3307"
     env_file:
-      - ../.env
+      - .env
     volumes:
-      - .:/app
+      - ./backend/:/app
+  mysql:
+    image: "mysql:5.7.44"
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+  redis:
+    image: "redis/redis-stack:6.2.6-v10"

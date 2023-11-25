@@ -1,5 +1,11 @@
 # ChatGPT customer service chat
 
+## Requirements
+
+install docker and docker compose, for ubuntu run
+
+    sudo bash scripts/01_install_docker_ubuntu.sh
+
 ## Setup
 
 Configure the environment by modifying .env.example
@@ -8,12 +14,8 @@ Configure the environment by modifying .env.example
 
 Configure the assistant behavior by modifying the contents inside backend/src/custom/static_content.js
 
-Start the backend
+Start the project
 
-    sudo bash scripts/03_start_backend.sh
-
-or, for starting in dev mode
-
-    sudo bash scripts/03_start_backend_dev.sh
+    sudo bash scripts/02_start.sh
 
 query the endpoint to the /query endpoint path with ?message=what you want
