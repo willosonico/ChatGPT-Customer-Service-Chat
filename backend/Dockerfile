@@ -4,6 +4,6 @@ ARG BUILD_DEVELOPMENT
 
 WORKDIR /app
 
-RUN yarn install
+CMD yarn install
 
 ENTRYPOINT "/bin/bash" "/app/docker_start.sh"
