@@ -1,10 +1,9 @@
-FROM node:16
+FROM node:20
 
 ARG BUILD_DEVELOPMENT
 
 WORKDIR /app
 
 RUN yarn install
-RUN npm config set cache /tmp --global
 
 ENTRYPOINT "/bin/bash" "/app/docker_start.sh"
