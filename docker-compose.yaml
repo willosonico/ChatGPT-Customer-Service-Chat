@@ -15,14 +15,15 @@ services:
     networks:
       - chatgpt-customer-service-chat
     ports:
-      - "3307:3307"
+      - "3307:${API_PUBLIC_PORT}"
     env_file:
       - .env
     volumes:
       - ./backend/:/app
+  redis:
+    image: "redis/redis-stack:6.2.6-v10"
+  # uncomment this if you already have a mysql
   mysql:
     image: "mysql:5.7.44"
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
-  redis:
-    image: "redis/redis-stack:6.2.6-v10"
