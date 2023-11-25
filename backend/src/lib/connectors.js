@@ -4,7 +4,6 @@ import OpenAI from "openai";
 
 dotenv.config();
 
-console.log('CONNECTING TO OPENAI')
 export const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
@@ -17,8 +16,10 @@ let mysqlConnectionConfig = {
     database: process.env.MYSQL_DB
 }
 
+console.log('- connecting to mysql')
 export var mysqlConn = mysql.createConnection(mysqlConnectionConfig);
 
-/*mysqlConn.connect(function(err) {
+mysqlConn.connect(function(err) {
     if (err) throw err;
-});*/
+    console.log('- mysql connected')
+});

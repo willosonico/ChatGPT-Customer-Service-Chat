@@ -1,9 +1,9 @@
 let express = require("express");
-const {queryChatGPT} = require("./lib/conversation");
+let {queryChatGPT} = require("./lib/conversation");
 let app = express();
 
 app.listen(3307, () => {
-    console.log("Server running on port 3307");
+    console.log("- api server running on port 3307");
 });
 
 // @ts-ignore

@@ -22,14 +22,26 @@ services:
       - ./backend/:/app
   redis:
     image: "redis/redis-stack:6.2.6-v10"
+    restart: always
+    networks:
+      - chatgpt-customer-service-chat
+    # uncomment these lines if you want to expose redis
+    # ports:
+    #  - "6379:6379"
   # uncomment this if you already have a mysql server running
   mysql:
     image: "mysql:5.7.44"
+    restart: always
+    networks:
+      - chatgpt-customer-service-chat
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
-    # uncomment this line if you do not want to expose mysql server
-    ports:
-      - "3306:3306"
+    # uncomment these lines if you want to expose mysql server
+    # ports:
+    #   - "3306:3306"
     # the mysql_shared folder is a tool to share .sql files into the container and be able to import them in mysql
     volumes:
-      - ./mysql_shared/:/mysql_shared
+      - ./mysql-shared:/mysql-shared
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
